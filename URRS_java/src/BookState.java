@@ -1,4 +1,3 @@
-
-public enum BookState {
-	
+public enum BookState {    
+	 
 }

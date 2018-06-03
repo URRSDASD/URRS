@@ -7,7 +7,7 @@ public class User {
     public User(int userId,int passWord) {
         this.userId = userId;
         this.passWord = passWord;
-        this.state=setstate.ACCESS;
+        this.state=state.ACCESS;
     }
 
 	public int getUserId() {

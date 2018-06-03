@@ -6,11 +6,13 @@ public class Book {
 	private BookState state;
 	private int availableQty; // Ã¥ Àç°í
 	
-	
     public Book(int bookId) {
         this.bookId = bookId;
         this.setBookName(bookName);
 		this.setState(BookState.Rentable);
+		this.setAuthor(author);
+		this.setPublisher(publisher);
+		this.setAvailableQty(availableQty);
     }
     
     public int getBookId() {return bookId;}
@@ -36,6 +38,4 @@ public class Book {
 	public int getAvailableQty() { return availableQty;}
 	
 	public void setAvailableQty(int availableQty) {this.availableQty= availableQty;}
-
-	
 }

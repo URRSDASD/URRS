@@ -35,10 +35,10 @@ public class Rent {
 			int remain = rentalList.getBook().getAvailableQty() - rentalList.getQuantity();
 			rentalList.getBook().setAvailableQty(remain);
 		}
-		setState(BookState.Rented);
+		setbookState(BookState.Rented);
 	}
 
-	private void setState(BookState state) {
-		this.state = state;
+	private void setbookState(BookState state) {
+		this.bookState = state;
 	}
 }

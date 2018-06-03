@@ -6,7 +6,7 @@ public class User {
     public User(String userId, String passWord) {
         this.userId = userId;
         this.passWord = passWord;
-        this.userState = UserState.ACCESS;
+        this.setUserState(UserState.ACCESS);
     }
 
 	public String getUserId() {
@@ -16,6 +16,12 @@ public class User {
 	public String getPassWord() {
 		return passWord;
 	}
-    
-    
+
+	public UserState getUserState() {
+		return userState;
+	}
+
+	public void setUserState(UserState userState) {
+		this.userState = userState;
+	}  
 }

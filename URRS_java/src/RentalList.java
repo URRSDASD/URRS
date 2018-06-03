@@ -9,6 +9,8 @@ public class RentalList {
 		}
 	}
 	public int getQuantity() { return quantity;}
+	
 	public void setQuantity(int quantity) { this.quantity = quantity; }
+	
 	public Book getBook() { return book;}
 }

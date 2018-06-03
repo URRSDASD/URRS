@@ -1,20 +1,19 @@
 
 public class User {
-	private final int userId;
-	private final int passWord;
+	private final String userId;
+	private final String passWord;
 	private UserState userState;
-	
-    public User(int userId, int passWord) {
+    public User(String userId, String passWord) {
         this.userId = userId;
         this.passWord = passWord;
-        this.userState = userState.ACCESS;
+        this.userState = UserState.ACCESS;
     }
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public int getPassWord() {
+	public String getPassWord() {
 		return passWord;
 	}
     

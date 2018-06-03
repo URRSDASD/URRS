@@ -13,4 +13,10 @@ public class BookList {
 		sharedInstance = new BookList();
 		return sharedInstance;
 	}
+
+	public void inputId(int bookId) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -13,18 +13,15 @@ public class Rent {
 	
 	public void rentBook(int bookId,int date) {
 		preCondition();
+		inputIdentifier(bookId);
 		RentalList rList = new RentalList(bookId,date);
 		this.rList.add(rList);
 		postCondition();
 	}
 	
-	public int getReturnDate(int date) {
-		return date + 7;
-	}
-	
 	private void preCondition() {
 		if(userState != UserState.ACCESS) {
-			throw new RuntimeException("Denyed rent");
+			throw new RuntimeException("Denyed rent!");
 		}
 		if(bookState != BookState.Rentable) {
 			throw new RuntimeException("Already rented!");

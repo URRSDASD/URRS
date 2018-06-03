@@ -7,7 +7,8 @@ public class Rent {
 	
 	public Rent() {
 		this.rList = new ArrayList<RentalList>();
-		this.state = BookState.Rentable;
+		this.bookState = BookState.Rentable;
+		this.userState = UserState.ACCESS;
 	}
 	
 	public void rentBook(int bookId,int date) {
@@ -22,10 +23,10 @@ public class Rent {
 	}
 	
 	private void preCondition() {
-		if(userState == UserState.UNACCESS) {
+		if(userState != UserState.ACCESS) {
 			throw new RuntimeException("Denyed rent");
 		}
-		if(bookState == BookState.Rented) {
+		if(bookState != BookState.Rentable) {
 			throw new RuntimeException("Already rented!");
 		}	
 	}

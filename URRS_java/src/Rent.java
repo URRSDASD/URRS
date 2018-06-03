@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class Rent {
 	private ArrayList<RentalList> rList;
-	private BookState state;
+	private BookState bookState;
+	private UserState userState;
 	
 	public Rent() {
 		this.rList = new ArrayList<RentalList>();
@@ -21,7 +22,10 @@ public class Rent {
 	}
 	
 	private void preCondition() {
-		if(state != BookState.Rented) {
+		if(userState == UserState.UNACCESS) {
+			throw new RuntimeException("Denyed rent");
+		}
+		if(bookState == BookState.Rented) {
 			throw new RuntimeException("Already rented!");
 		}	
 	}

@@ -1,4 +1,4 @@
 
-public class RentalList {
+public class RentalList {  //Ãß°¡
 
 }

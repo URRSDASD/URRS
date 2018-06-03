@@ -5,7 +5,8 @@ public class Book {
 	private String author;
 	private BookState state;
 	private int availableQty; // Ã¥ Àç°í
-	
+	private int test;	
+
     public Book(int bookId) {
         this.bookId = bookId;
         this.setBookName(bookName);

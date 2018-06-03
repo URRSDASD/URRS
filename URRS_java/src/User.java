@@ -2,12 +2,12 @@
 public class User {
 	private final int userId;
 	private final int passWord;
-	private UserState state;
+	private UserState userState;
 	
-    public User(int userId,int passWord) {
+    public User(int userId, int passWord) {
         this.userId = userId;
         this.passWord = passWord;
-        this.state=state.ACCESS;
+        this.userState = userState.ACCESS;
     }
 
 	public int getUserId() {

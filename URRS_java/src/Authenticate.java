@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 
 public class Authenticate {
-	private String id;
-	private String password;
 	private static ArrayList<User> users = new ArrayList<>();
-	public static Authenticate login(String id, String pass) throws Exception {
+	
+	public static User login(String id, String pass) throws Exception {
         for (User user : users) {
-            if (user.id.equals(id) && user.password.equals(pass)) {
+            if (user.getUserId().equals(id) && user.getPassWord().equals(pass)) {
                 return user;
             }
         }

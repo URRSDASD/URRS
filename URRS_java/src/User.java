@@ -6,7 +6,7 @@ public class User {
 	
     public User(int userId,int passWord) {
         this.userId = userId;
-        this.passWord=passWord;
+        this.passWord = passWord;
         this.state=state.ACCESS;
     }
 

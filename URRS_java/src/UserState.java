@@ -1,4 +1,4 @@
 
 public enum UserState {
-	ACCESS,UNACCESS
+	ACCESS, UNACCESS	// 대출 가능, 대출 불가능
 }

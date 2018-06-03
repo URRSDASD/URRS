@@ -1,9 +1,9 @@
-/Search.class
+/Authenticate.class
 /Book.class
-/User.class
+/BookState.class
 /Rent.class
 /Return.class
-/Authenticate.class
+/Search.class
 /Select.class
-/BookState.class
+/User.class
 /UserState.class

@@ -1,7 +1,7 @@
 public class Book {
-	private final int id;
+	private final int bookId;
 
-    public Book(int id) {
-        this.id = id;
+    public Book(int bookId) {
+        this.bookId = bookId;
     }
 }

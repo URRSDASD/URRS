@@ -1,3 +1,3 @@
 public enum UserState {
-	ACCESS,UNACCESS
+	ACCESS, UNACCESS
 }

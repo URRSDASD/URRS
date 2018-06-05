@@ -3,7 +3,7 @@ public class User {
 	private final String userId;
 	private final String passWord;
 	private UserState userState;
-    public User(String userId, String passWord) {
+    public User(String userId, String passWord, UserState state) {
         this.userId = userId;
         this.passWord = passWord;
         this.setUserState(UserState.ACCESS);

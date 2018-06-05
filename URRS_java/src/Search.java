@@ -14,9 +14,8 @@ public class Search {
 
 	/* searchType의 default value는 4(전체검색) */
 	private int searchType = 4;
-	private DbConnection dc;
+	private static DbConnection dc;
 	private BookList bookList = BookList.getInstance();
-	private BookState bState;
 
 	/* setCondition -> 사실상 생성자 */
 	Search(String keyword, int category, int searchType) {
@@ -65,6 +64,7 @@ public class Search {
 				}
 
 				bookList.addBook(rs.getInt("bookId"),
+						rs.getString("rentedUserId"),
 						rs.getString("bookName"),
 						rs.getString("publisher"),
 						rs.getString("author"),
@@ -80,7 +80,7 @@ public class Search {
 		return bookList;
 	}
 
-	public Book selectBook(int bookId) {
+	public static Book selectBook(int bookId) {
 		Book book = null;
 
 		try {
@@ -103,6 +103,7 @@ public class Search {
 			}
 
 			book = new Book(rs.getInt("bookId"),
+					rs.getString("rentedUserId"),
 					rs.getString("bookName"),
 					rs.getString("publisher"),
 					rs.getString("author"),

@@ -7,25 +7,20 @@ public class BookList {
 	public BookList() { 
 		books = new ArrayList<Book>();
 	}
-	public static synchronized BookList getInstance() {
+	static synchronized BookList getInstance() {
 		if(sharedInstance != null)
 			return sharedInstance;
 		sharedInstance = new BookList();
 		return sharedInstance;
 	}
 
-	public void inputId(int bookId) {
-
-	}
-
-	public void addBook(int bookId, String bookName, String publisher,
+	void addBook(int bookId, String rentedUserId,String bookName, String publisher,
 						String author, String location, BookState state) {
-		boolean found = false;
 
-		Book book = new Book(bookId, bookName, publisher, author, location, state);
+		Book book = new Book(bookId, rentedUserId, bookName, publisher, author, location, state);
 		books.add(book);
 	}
-	public void emptyBookStack() {
+	void emptyBookStack() {
 		books.clear();
 	}
 

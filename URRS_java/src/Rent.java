@@ -13,7 +13,6 @@ public class Rent {
 	
 	public void rentBook(int bookId,int date) {
 		preCondition();
-		inputIdentifier(bookId);
 		RentalList rList = new RentalList(bookId,date);
 		this.rList.add(rList);
 		postCondition();
@@ -34,7 +33,10 @@ public class Rent {
 		}
 		setbookState(BookState.Rented);
 	}
-
+	
+	private void inputID() {
+		
+	}
 	private void setbookState(BookState state) {
 		this.bookState = state;
 	}

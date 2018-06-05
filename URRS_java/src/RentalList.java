@@ -3,6 +3,7 @@ public class RentalList {
 	private Book book;
 	public RentalList(int bookId,int qty) {
 		BookList bookList = BookList.getInstance();
+		this.book = bookList.
 		this.quantity = qty;
 		if(this.book.getAvailableQty() < qty) {
 			throw new RuntimeException ("");

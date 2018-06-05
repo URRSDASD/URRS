@@ -10,26 +10,26 @@ public class Search {
 	private String keyword;
 	private int category;
 
-	/* searchType의 default value는 4(전체검색) */
+	/* searchType�쓽 default value�뒗 4(�쟾泥닿��깋) */
 	private int searchType = 4;
 	private DbConnection dc;
 	private BookList bookList = BookList.getInstance();
 	private BookState bState;
 
-	/* setCondition -> 사실상 생성자 */
-	public void Search(String keyword, int category, int searchType) {
+	/* setCondition -> �궗�떎�긽 �깮�꽦�옄 */
+	Search(String keyword, int category, int searchType) {
 		this.keyword = keyword;
 		this.category = category;
 		this.searchType = searchType;
 
-		/* 검색을 시행할 때마다 book instance를 비워준다. */
+		/* 寃��깋�쓣 �떆�뻾�븷 �븣留덈떎 book instance瑜� 鍮꾩썙以��떎. */
 		bookList.emptyBookStack();
 	}
 
-	// ResultSet type 변수를 통해 key 값(컬럼이름)으로............
-	// Book 배열을 리턴한다. (ResultSet -> books tables 내의 조건에 부합하는 튜플들을 참조)
+	// ResultSet type 蹂��닔瑜� �넻�빐 key 媛�(而щ읆�씠由�)�쑝濡�............
+	// Book 諛곗뿴�쓣 由ы꽩�븳�떎. (ResultSet -> books tables �궡�쓽 議곌굔�뿉 遺��빀�븯�뒗 �뒠�뵆�뱾�쓣 李몄“)
 	//	**********************************
-	// SSD에서 newSearch의 파라미터 수정해야됨
+	// SSD�뿉�꽌 newSearch�쓽 �뙆�씪誘명꽣 �닔�젙�빐�빞�맖
 	public BookList newSearch() {
 		try {
 			String sql;
@@ -37,10 +37,10 @@ public class Search {
 			Connection conn = dc.Connect();
 			Statement stmt = conn.createStatement();
 
-			// searchType 0 -> 제목으로 검색
-			// searchType 1 -> 저자로 검색
-			// searchType 2 -> 출판사로 검색
-			// searchType 4 -> 전체 검색 (default)
+			// searchType 0 -> �젣紐⑹쑝濡� 寃��깋
+			// searchType 1 -> ���옄濡� 寃��깋
+			// searchType 2 -> 異쒗뙋�궗濡� 寃��깋
+			// searchType 4 -> �쟾泥� 寃��깋 (default)
 
 			if (searchType == 0) {
 				sql = "SELECT * FROM books " +
@@ -53,11 +53,11 @@ public class Search {
 						"WHERE 'category' =" + category + "AND 'publisher' =" + keyword;
 			}
 
-			/* 외부 시스템으로부터 요청하는 요청문 */
+			/* �쇅遺� �떆�뒪�뀥�쑝濡쒕��꽣 �슂泥��븯�뒗 �슂泥�臾� */
 			ResultSet rs = stmt.executeQuery(sql);
 
 
-			/* 디비에서 integer로 받아온 값을 BookState값으로 미리 배당 */
+			/* �뵒鍮꾩뿉�꽌 integer濡� 諛쏆븘�삩 媛믪쓣 BookState媛믪쑝濡� 誘몃━ 諛곕떦 */
 			while(rs.next()) {
 				BookState bs = null;
 				if(rs.getBoolean("bookState")){
@@ -91,13 +91,14 @@ public class Search {
 			sql = "SELECT * FROM books " +
 					"WHERE 'bookId' =" + bookId;
 
-			/* 외부 시스템으로부터 요청하는 요청문 */
+			/* �쇅遺� �떆�뒪�뀥�쑝濡쒕��꽣 �슂泥��븯�뒗 �슂泥�臾� */
 			ResultSet rs = stmt.executeQuery(sql);
 
 		} catch(SQLException e) {
 			System.out.println("Database connection error");
 			e.printStackTrace();
 		}
+		
 	}
 
 	public void askBook(int bookId) {

@@ -82,6 +82,8 @@ public class Search {
 	}
 
 	public Book selectBook(int bookId) {
+		Book book = null;
+
 		try {
 			String sql;
 			dc = new DbConnection();
@@ -94,10 +96,25 @@ public class Search {
 			/* 외부 시스템으로부터 요청하는 요청문 */
 			ResultSet rs = stmt.executeQuery(sql);
 
+			BookState bs = null;
+			if(rs.getBoolean("bookState")){
+				bs = BookState.Rentable;
+			} else {
+				bs = BookState.Rented;
+			}
+
+			book = new Book(rs.getInt("bookId"),
+					rs.getString("bookName"),
+					rs.getString("publisher"),
+					rs.getString("author"),
+					bs);
+
 		} catch(SQLException e) {
 			System.out.println("Database connection error");
 			e.printStackTrace();
 		}
+
+		return book;
 	}
 
 	public void askBook(int bookId) {

@@ -15,14 +15,14 @@
       <file leaf-file-name="Search.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/URRS_java/src/Search.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+            <state relative-caret-position="450">
+              <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1528171202750" expanded="true" signature="1225:1302" ph="SELECT * FRO... books" />
-                <marker date="1528171202750" expanded="true" signature="1359:1438" ph="SELECT * FRO... books" />
-                <marker date="1528171202750" expanded="true" signature="1474:1556" ph="SELECT * FRO... books" />
-                <marker date="1528171202750" expanded="true" signature="2324:2370" ph="SELECT * FRO... books" />
+                <marker date="1528171992784" expanded="true" signature="1225:1302" ph="SELECT * FRO... books" />
+                <marker date="1528171992784" expanded="true" signature="1359:1438" ph="SELECT * FRO... books" />
+                <marker date="1528171992784" expanded="true" signature="1474:1556" ph="SELECT * FRO... books" />
+                <marker date="1528171992784" expanded="true" signature="2345:2391" ph="SELECT * FRO... books" />
               </folding>
             </state>
           </provider>
@@ -235,12 +235,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528165117837</updated>
-      <workItem from="1528165122953" duration="5550000" />
+      <workItem from="1528165122953" duration="6435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5550000" />
+    <option name="totallyTimeSpent" value="6435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
@@ -317,14 +317,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/URRS_java/src/Search.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        <state relative-caret-position="450">
+          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1528171202750" expanded="true" signature="1225:1302" ph="SELECT * FRO... books" />
-            <marker date="1528171202750" expanded="true" signature="1359:1438" ph="SELECT * FRO... books" />
-            <marker date="1528171202750" expanded="true" signature="1474:1556" ph="SELECT * FRO... books" />
-            <marker date="1528171202750" expanded="true" signature="2324:2370" ph="SELECT * FRO... books" />
+            <marker date="1528171992784" expanded="true" signature="1225:1302" ph="SELECT * FRO... books" />
+            <marker date="1528171992784" expanded="true" signature="1359:1438" ph="SELECT * FRO... books" />
+            <marker date="1528171992784" expanded="true" signature="1474:1556" ph="SELECT * FRO... books" />
+            <marker date="1528171992784" expanded="true" signature="2345:2391" ph="SELECT * FRO... books" />
           </folding>
         </state>
       </provider>

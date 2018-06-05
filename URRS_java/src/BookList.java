@@ -15,8 +15,17 @@ public class BookList {
 	}
 
 	public void inputId(int bookId) {
-		// TODO Auto-generated method stub
-		
+
+	}
+
+	public void addBook(int bookId, String bookName, String publisher, String author, BookState state) {
+		boolean found = false;
+
+		Book book = new Book(bookId, bookName, publisher, author, state);
+		books.add(book);
+	}
+	public void emptyBookStack() {
+		books.clear();
 	}
 
 }

@@ -4,16 +4,16 @@ public class Book {
 	private String publisher;
 	private String author;
 	private BookState state;
-	private int availableQty; // Ã¥ Àç°í
-	private int test;	
 
-    public Book(int bookId) {
+    public Book(int bookId, String bookName,
+				String publisher, String author, BookState state) {
+
         this.bookId = bookId;
-        this.setBookName(bookName);
-		this.setState(BookState.Rentable);
-		this.setAuthor(author);
-		this.setPublisher(publisher);
-		this.setAvailableQty(availableQty);
+        this.bookName = bookName;
+		this.publisher = publisher;
+		this.author = author;
+		this.state = state;
+
     }
     
     public int getBookId() {return bookId;}
@@ -35,8 +35,5 @@ public class Book {
 	public BookState getState() {return state;}
 
 	public void setState(BookState state) { this.state = state;}
-	
-	public int getAvailableQty() { return availableQty;}
-	
-	public void setAvailableQty(int availableQty) {this.availableQty= availableQty;}
+
 }

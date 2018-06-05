@@ -3,15 +3,17 @@ public class Book {
 	private String bookName;
 	private String publisher;
 	private String author;
+	private String location;
 	private BookState state;
 
     public Book(int bookId, String bookName,
-				String publisher, String author, BookState state) {
+				String publisher, String author, String location, BookState state) {
 
         this.bookId = bookId;
         this.bookName = bookName;
 		this.publisher = publisher;
 		this.author = author;
+		this.location = location;
 		this.state = state;
 
     }
@@ -36,4 +38,11 @@ public class Book {
 
 	public void setState(BookState state) { this.state = state;}
 
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
 }

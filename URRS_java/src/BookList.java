@@ -18,10 +18,11 @@ public class BookList {
 
 	}
 
-	public void addBook(int bookId, String bookName, String publisher, String author, BookState state) {
+	public void addBook(int bookId, String bookName, String publisher,
+						String author, String location, BookState state) {
 		boolean found = false;
 
-		Book book = new Book(bookId, bookName, publisher, author, state);
+		Book book = new Book(bookId, bookName, publisher, author, location, state);
 		books.add(book);
 	}
 	public void emptyBookStack() {

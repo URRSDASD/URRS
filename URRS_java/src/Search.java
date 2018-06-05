@@ -1,10 +1,12 @@
+import java.io.PrintWriter;
 import java.sql.Statement;
-import java.util.ArrayList;
 import database.DbConnection;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class Search {
 	private String keyword;
@@ -40,13 +42,13 @@ public class Search {
 
 			if (searchType == 0) {
 				sql = "SELECT * FROM books " +
-						"WHERE 'category' =" + category + "AND 'name' =" + keyword;
+						"WHERE 'category' =" + category + "AND 'name' LIKE%" + keyword + "%";
 			} else if (searchType == 1) {
 				sql = "SELECT * FROM books " +
-						"WHERE 'category' =" + category + "AND 'author' =" + keyword;
+						"WHERE 'category' =" + category + "AND 'author' LIKE%" + keyword + "%";
 			} else {
 				sql = "SELECT * FROM books " +
-						"WHERE 'category' =" + category + "AND 'publisher' =" + keyword;
+						"WHERE 'category' =" + category + "AND 'publisher' LIKE%" + keyword + "%";
 			}
 
 			/* 외부 시스템으로부터 요청하는 요청문 */
@@ -66,6 +68,7 @@ public class Search {
 						rs.getString("bookName"),
 						rs.getString("publisher"),
 						rs.getString("author"),
+						rs.getString("location"),
 						bs);
 			}
 
@@ -103,6 +106,7 @@ public class Search {
 					rs.getString("bookName"),
 					rs.getString("publisher"),
 					rs.getString("author"),
+					rs.getString("location"),
 					bs);
 
 		} catch(SQLException e) {
@@ -113,7 +117,24 @@ public class Search {
 		return book;
 	}
 
-	public void askBook(int bookId) {
+	/* askBook(book)와 같이 접근 */
+	public void askBook(Book book) {
+		BufferedWriter bw = null;
+		PrintWriter pw;
+		try {
+			bw = new BufferedWriter(new FileWriter("receipt.txt", true));
+			pw = new PrintWriter(bw, true);
+
+			pw.write("Name : " + book.getBookName() + "\n");
+			pw.write("Author : " + book.getAuthor() + "\n");
+			pw.write("Publisher : " + book.getPublisher() + "\n");
+			pw.write("Location : " + book.getLocation() + "\n");
+
+			pw.flush();
+			pw.close();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
 
 	}
 }
